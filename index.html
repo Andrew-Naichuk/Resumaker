@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="/app.js" defer></script>
+
+</head>
+<body>
+
+    <header>
+        <h3>Resumaker</h3>
+        <nav>
+            <div class="userInfo">
+                <img src="" alt="User Image" id="userImage">
+                <h4 id="userName">User name</h4>
+            </div>
+            <button type="button" id="logBtn">Log in</button>
+            <button type="button" id="outBtn">Log out</button>
+        </nav>
+    </header>
+
+    <section>
+
+        <div class="controls">
+            <h3>Click on elements to edit or remove, once ready:</h3>
+            <button type="button" id="publish">Save on server</button>
+            <button type="button" id="savePDF">Save as PDF</button>
+        </div>
+
+        <div class="editWindow" id="editWindow">
+            <button id="delete">✕</button>
+            <input type="text" id="editField">
+            <button id="cancelEdit">Cancel</button>
+            <button id="saveEdit">Save</button>
+        </div>
+
+        <div class="mainContainer" id="userResume">
+            <!-- <div class="loginMessage">
+                <h5>Log in to create or update your resume!</h5>
+            </div> -->
+
+            <div class="resumeContent">
+            
+                <div class="resumeHead">
+                    <h1>BERNARD SMITH</h1>
+                    <h3>Attorney and Legal Counsel</h3>
+                </div>
+
+                <div class="resumeColumns">
+                    <div class="resumeLeftColumn">
+                        <div class="columnItem">
+                            <h3>Contacts</h3>
+                            <h4>Budapest, Hungary</h4>
+                            <h4>+36 (845) 745 611</h4>
+                            <h4>berny@resumaker.com</h4>
+                            <h4>www.bernsith.com</h4>
+                        </div>
+
+                        <div class="columnItem">
+                            <h3>Pro Skills</h3>
+                            <h4>Legal research</h4>
+                            <h4>Due diligence</h4>
+                            <h4>Litigation</h4>
+                            <h4>Negotiations</h4>
+                            <h4>Legal drafting</h4>
+                            <h4>M&A procedures</h4>
+                        </div>
+
+                        <div class="columnItem">
+                            <h3>Language Skills</h3>
+                            <h4>English - C1</h4>
+                            <h4>Czech - B2</h4>
+                            <h4>German - B2</h4>
+                            <h4>Polish - A2</h4>
+                        </div>
+
+                        <div class="columnItem">
+                            <h3>Extra Info</h3>
+                            <h4>Interested in legal tech projects</h4>
+                            <h4>Experience in web design and coding</h4>
+                            <h4>Flexible in schedule and punctual</h4>
+                            <h4>Experience of project management</h4>
+                        </div>
+                    </div>
+
+                    <div class="resumeRightColumn">
+                        <div class="columnItem">
+                            <h3>Profile</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus dolorem excepturi sint fuga! Sed veritatis corporis reiciendis explicabo. Voluptatum, alias laborum harum eos vitae autem iste maxime praesentium earum!</p>
+                        </div>
+
+                        <div class="columnItem">
+                            <h3>Professional Experience</h3>
+                            <h4>HEXLINE LEGAL INC.</h4>
+                            <h5>02.2018 - 02.2022</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus dolorem excepturi sint fuga! Sed veritatis corporis reiciendis explicabo. Voluptatum.</p>
+                            <hr>
+                            <h4>HEXLINE LEGAL INC.</h4>
+                            <h5>02.2018 - 02.2022</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus dolorem excepturi sint fuga! Sed veritatis corporis reiciendis explicabo. Voluptatum.</p>
+                            <hr>
+                            <h4>HEXLINE LEGAL INC.</h4>
+                            <h5>02.2018 - 02.2022</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque natus dolorem excepturi sint fuga! Sed veritatis corporis reiciendis explicabo. Voluptatum.</p>
+                        </div>
+
+                        <div class="columnItem">
+                            <h3>Education</h3>
+                            <h4>Hungary Legal Academy</h4>
+                            <h5>2016 Bachelor</h5>
+                            <p>Specialisation - Law</p>
+                            <hr>
+                            <h4>Hungary Legal Academy</h4>
+                            <h5>2018 Master</h5>
+                            <p>Specialisation - Law</p>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="welcome">
+        <h2>Create awesome CV in just few clicks</h2>
+        <h3>Log in to continue</h3>
+    </section>
+
+</body>
+</html>
